@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;font-size: 55px;}
+			.ss{
+				border: 1px solid #ccc;
+				/*padding: 10px;*/
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="te" value="" />
+		<input type="button" class="ss" id="ss" value="" />
+		<input type="button" id="but" value="验证" />
+	</body>
+	<script type="text/javascript">
+		var te=document.getElementById("te");
+		var ss=document.getElementById("ss");
+		var but=document.getElementById("but");
+		var col=4;
+		function qido(){
+			 nm='';
+			var ar=[1,2,3,4,5,6,7,8,9,0,'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+			for(var i=0;i<col;i++){
+				nm+=ar[Math.floor(Math.random()*36)];
+			}
+			ss.value=nm;
+		}
+		qido()
+		ss.onclick=qido;
+		but.onclick=function (){
+			var va=te.value.toUpperCase();
+			if(va.length!=4||va==''){
+				alert('错了');
+			}else if(va!=nm){
+				alert('错了')
+			}else{
+				alert('对了')
+			}
+		}
+	</script>
+</html>
